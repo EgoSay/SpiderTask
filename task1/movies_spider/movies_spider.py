@@ -48,10 +48,6 @@ def get_movie_info_with_regex(url):
 
 if __name__ == '__main__':
 
-    # file = open('movie.csv', 'w+', encoding='utf-8', newline='')
-    # writer = csv.writer(file)
-    # writer.writerow(['rank', 'name', 'country', 'director', 'score'])
-    #
     for i in range(0, 250, 25):
         url = 'https://movie.douban.com/top250?start={}&filter='.format(i)
         # get_movie_info_with_regex(url)
