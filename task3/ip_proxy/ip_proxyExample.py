@@ -2,14 +2,18 @@
 # @Email   : adairchan.dream@gmail.com
 # @Date    : 2019/4/10 上午11:36
 # @IDE     : PyCharm
+import json
 import os
 import random
+import re
 from time import sleep
 
+import requests
 from lxml import etree
 
 from common.getHtmlText import getHtmlText
 from task3.ip_proxy.randomAgent import USER_AGENTS_LIST
+
 
 def ip_proxy():
     # 根据不同的代理种类进入不同的链接页面爬取IP
@@ -20,13 +24,13 @@ def ip_proxy():
         file = open(path, 'w+', encoding='utf-8')
         sleep(1)
         url = base_url + v + '/'
-        ip = '163.204.242.209:9999'
+
         # 有很多页，这里我只爬取一部分
         for i in range(1, 2):
             page_url = url + str(i) + '/'
             # 随机设置请求头
             hd = {"User-agent": random.choice(USER_AGENTS_LIST)}
-            text = getHtmlText(page_url, hd, proxies={'http': ip})
+            text = getHtmlText(page_url, hd)
             html = etree.HTML(text)
             # ip_list = html.xpath('//*[ @id = "ip_list"]/tbody/')
             proxy_list = html.xpath('//tr[@class="odd"]')

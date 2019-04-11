@@ -16,7 +16,7 @@
        ```
    3. 模拟登陆163邮箱    
         >163邮箱直通点：https://mail.163.com/
-         chromedriver=2.46.628411
+   
       - 第一步： 安装selenium: `pip install selenium` 
         >注意：如果电脑上有多个python2, python3多个环境注意对应的pip安装
         
@@ -35,7 +35,9 @@
             browser.switch_to.frame(0)
             ```
             另外在 这里如果没有设置等待 3s 时可能会报如下错\
-            <font color=red>selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"name","selector":"email"}</font>
+            `selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"name","selector":"email"}`
             
     
-
+- 学习什么是IP，为什么会出现IP被封，如何应对IP被封的问题。
+    >抓取西刺代理，并构建自己的代理池。
+    西刺直通点：https://www.xicidaili.com/ 。
